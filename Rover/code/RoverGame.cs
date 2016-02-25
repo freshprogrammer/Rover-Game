@@ -400,8 +400,8 @@ namespace RoverGame
             themeSongSound      = Content.Load<SoundEffect>(@"sounds\Sonic_Theme");
 
 
-            backgroundMenuMusic = Content.Load<Song>(@"songs\Subsonic_Sparkle");
-            backgroundGameMusic = Content.Load<Song>(@"songs\Pipes_ReMix");
+            backgroundMenuMusic = Content.Load<Song>(@"songs\Sonic_the_Hedgehog_Subsonic_Sparkle_OC_ReMix");
+            backgroundGameMusic = Content.Load<Song>(@"songs\Super_Mario_Bros_3_Pipes_OC_ReMix");
     
             Profiler.Stop();
         }
