@@ -1097,16 +1097,16 @@ namespace RoverGame
         {
             base.OnExiting(sender, args);
 
-            // Stop the threads'
-            Profiler.SaveDataToFile(@"Content\scripts\profileData.txt", false);
-            SystemExit();
+            // Stop all necisarry processes and save to disk
+            StopAndSaveFiles();
         }
 
         /// <summary>
         /// Game Ending - Saves any data, closes open files, and end threads
         /// </summary>
-        private void SystemExit()
+        private void StopAndSaveFiles()
         {
+            Profiler.SaveDataToFile(@"Content\scripts\profileData.txt", false);
 
             //only necisary to save out the variables if they have been changed since the app was launched - visa-vi in app settings/stats/ect
             //Menu_ClearCurrentMenu();//probably not nececisay
@@ -1115,7 +1115,11 @@ namespace RoverGame
             //safty stop all vibration
             for (int xx = 0; xx < 4; xx++)
                 GamePad.SetVibration((PlayerIndex)xx, 0, 0);
+        }
 
+        private void SystemExit()
+        {
+            StopAndSaveFiles();
             this.Exit();
         }
         
