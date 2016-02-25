@@ -1918,7 +1918,7 @@ namespace RoverGame
             }
         }
     }
-    class PlayerController
+    struct PlayerController
     {
         public static bool UpPressed { get { return MovementDir.Y < 0; } }
         public static bool DownPressed { get { return MovementDir.Y > 0; } }
