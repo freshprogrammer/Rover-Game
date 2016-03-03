@@ -213,6 +213,7 @@ namespace RoverGame
 #else
             Window.Title = Assembly.GetExecutingAssembly().GetName().Name + " - " + Assembly.GetExecutingAssembly().GetName().Version;
 #endif
+            Window.Position = Point.Zero;
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
             BaseObject.sSystemRegistry.SpriteBatch = spriteBatch;
@@ -1192,9 +1193,9 @@ namespace RoverGame
             }
 
             //handle mouse aiming and firing
-            firePressed = (oldMouseState.LeftButton == ButtonState.Pressed);
-            lookDir.X = oldMouseState.X;
-            lookDir.Y = oldMouseState.Y;
+            firePressed = (mouseState.LeftButton == ButtonState.Pressed);
+            lookDir.X = mouseState.X;
+            lookDir.Y = mouseState.Y;
             PlayerController.LookDir = lookDir;
 
             PlayerController.Moving = moveDir.X != 0 || moveDir.Y != 0;
